@@ -1,0 +1,59 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.heading{
+color: red;
+text-align: center;
+font-family:verdana;
+font-size:300%;
+}
+button{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  margin:auto;
+  display:block;
+}
+</style>
+<body style="background-color:powderblue;">
+    
+<h1 class="heading">Healthcare Provider Fraud Detection Analysis</h1>
+<br>
+<div>
+    
+    <form method="POST" enctype="multipart/form-data" action="/predict">
+	  <p class="lead">Upload provider data.</p>
+        <input type="file" id="ProviderFile" name="filename" accept=".csv"><br>
+
+        <p class="lead">Upload Beneficiary data.</p>
+        <input type="file" id="beneFile" name="benefilename" accept=".csv"><br>
+
+        <p class="lead">Upload Inpatient data.</p>
+        <input type="file" id="inFile" name="infilename" accept=".csv"><br>
+
+        <p class="lead">Upload Outpatient data.</p>
+        <input type="file" id="outFile" name="outfilename" accept=".csv"><br>
+
+        <button class="button",type="submit">predict</button>
+
+    </form>
+</div>
+
+<div align="center">
+      <table>
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables %}
+                    <h2>{{titles[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+       </table>
+ </div>
+
+</body>
+</html>

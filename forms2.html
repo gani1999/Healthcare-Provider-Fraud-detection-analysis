@@ -1,0 +1,380 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.heading{
+color: red;
+text-align: center;
+font-family:verdana;
+font-size:300%;
+}
+button{
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #4CAF50;
+ 
+}
+.button1{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  margin:auto;
+  display:block;
+ 
+}
+
+</style>
+<body style="background-color:powderblue;">
+    
+<h1 class="heading">Healthcare Provider Fraud Detection Analysis</h1>
+<br>
+
+
+<div >
+    <form method="POST" enctype="multipart/form-data" action="/provider">
+	  <p class="lead">Enter provider details.</p>
+        <label for="Provider">Provider:</label>
+  	  <input type="text" id="Provider" name="Provider" value="PRV51001"><br>
+  	  <button class="button",type="submit">Save Provider</button>
+
+    </form>
+
+<div align="center">
+            <table>
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables1 %}
+                    <h2>{{titles1[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+            </table>
+        </div>
+
+
+    <form method="POST" enctype="multipart/form-data" action="/beneficiary">
+        <p class="lead">Enter Beneficiary details.</p>
+	  <label for="BeneID">BeneID:</label>
+  	  <input type="text" id="BeneID" name="BeneID" value="BENE11001"><br>
+
+	  <label for="DOB">DOB:</label>
+  	  <input type="text" id="DOB" name="DOB" value="1943-01-01"><br>
+
+	  <label for="DOD">DOD:</label>
+  	  <input type="text" id="DOD" name="DOD" value="NaN"><br>
+
+  	  <label for="Gender">Gender:</label>
+  	  <input type="number" id="Gender" name="Gender" value="1"><br>
+
+	  <label for="Race">Race:</label>
+  	  <input type="number" id="Race" name="Race" value="1"><br>
+
+	  <label for="RenalDiseaseIndicator">RenalDiseaseIndicator:</label>
+  	  <input type="number" id="RenalDiseaseIndicator" name="RenalDiseaseIndicator" value="0"><br>
+
+	  <label for="State">State:</label>
+  	  <input type="number" id="State" name="State" value="39"><br>
+
+	  <label for="County">County:</label>
+  	  <input type="number" id="County" name="County" value="230"><br>
+
+	  <label for="NoOfMonths_PartACov">NoOfMonths_PartACov:</label>
+  	  <input type="number" id="NoOfMonths_PartACov" name="NoOfMonths_PartACov" value="12"><br>
+
+	  <label for="NoOfMonths_PartBCov">NoOfMonths_PartBCov:</label>
+  	  <input type="number" id="NoOfMonths_PartBCov" name="NoOfMonths_PartBCov" value="12"><br>
+
+	  <label for="ChronicCond_Alzheimer">ChronicCond_Alzheimer:</label>
+  	  <input type="number" id="ChronicCond_Alzheimer" name="ChronicCond_Alzheimer" value=1><br>
+
+	  <label for="ChronicCond_Heartfailure">ChronicCond_Heartfailure:</label>
+  	  <input type="number" id="ChronicCond_Heartfailure" name="ChronicCond_Heartfailure" value=1><br>
+
+	  <label for="ChronicCond_KidneyDisease">ChronicCond_KidneyDisease:</label>
+  	  <input type="number" id="ChronicCond_KidneyDisease" name="ChronicCond_KidneyDisease" value=1><br>
+
+	  <label for="ChronicCond_Cancer">ChronicCond_Cancer:</label>
+  	  <input type="number" id="ChronicCond_Cancer" name="ChronicCond_Cancer" value=1><br>
+
+	  <label for="ChronicCond_ObstrPulmonary">ChronicCond_ObstrPulmonary:</label>
+  	  <input type="number" id="ChronicCond_ObstrPulmonary" name="ChronicCond_ObstrPulmonary" value=1><br>
+
+	  <label for="ChronicCond_Depression">ChronicCond_Depression:</label>
+  	  <input type="number" id="ChronicCond_Depression" name="ChronicCond_Depression" value=1><br>
+
+	  <label for="ChronicCond_Diabetes">ChronicCond_Diabetes:</label>
+  	  <input type="number" id="ChronicCond_Diabetes" name="ChronicCond_Diabetes" value=1><br>
+
+	  <label for="ChronicCond_IschemicHeart">ChronicCond_IschemicHeart:</label>
+  	  <input type="number" id="ChronicCond_IschemicHeart" name="ChronicCond_IschemicHeart" value=1><br>
+
+	  <label for="ChronicCond_Osteoporasis">ChronicCond_Osteoporasis:</label>
+  	  <input type="number" id="ChronicCond_Osteoporasis" name="ChronicCond_Osteoporasis" value=1><br>
+
+	  <label for="ChronicCond_rheumatoidarthritis">ChronicCond_rheumatoidarthritis:</label>
+  	  <input type="number" id="ChronicCond_rheumatoidarthritis" name="ChronicCond_rheumatoidarthritis" value=1><br>
+
+	  <label for="ChronicCond_stroke">ChronicCond_stroke:</label>
+  	  <input type="number" id="ChronicCond_stroke" name="ChronicCond_stroke" value=1><br>
+
+	  <label for="IPAnnualReimbursementAmt">IPAnnualReimbursementAmt:</label>
+  	  <input type="number" id="IPAnnualReimbursementAmt" name="IPAnnualReimbursementAmt" value="3600"><br>
+
+	  <label for="IPAnnualDeductibleAmt">IPAnnualDeductibleAmt:</label>
+  	  <input type="number" id="IPAnnualDeductibleAmt" name="IPAnnualDeductibleAmt" value="3204"><br>
+
+	  <label for="OPAnnualReimbursementAmt">OPAnnualReimbursementAmt:</label>
+  	  <input type="number" id="OPAnnualReimbursementAmt" name="OPAnnualReimbursementAmt" value="60"><br>
+
+	  <label for="OPAnnualDeductibleAmt">OPAnnualDeductibleAmt:</label>
+  	  <input type="number" id="OPAnnualDeductibleAmt" name="OPAnnualDeductibleAmt" value="70"><br>
+
+	  <button class="button",type="submit">Save Beneficiary</button>
+
+    </form>
+
+<div align="center">
+            <table>
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables2 %}
+                    <h2>{{titles2[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+            </table>
+        </div>
+
+
+    <form method="POST" enctype="multipart/form-data" action="/inpatient">
+	  <p class="lead">Enter Inpatient details.</p>
+	  <label for="BeneID">BeneID:</label>
+  	  <input type="text" id="BeneID" name="BeneID" value="BENE11001"><br>
+
+	  <label for="ClaimID">ClaimID:</label>
+  	  <input type="text" id="ClaimID" name="ClaimID" value="CLM46614"><br>
+
+	  <label for="ClaimStartDt">ClaimStartDt:</label>
+  	  <input type="text" id="ClaimStartDt" name="ClaimStartDt" value="2009-04-12"><br>
+
+	  <label for="ClaimEndDt">ClaimEndDt:</label>
+  	  <input type="text" id="ClaimEndDt" name="ClaimEndDt" value="2009-04-18"><br>
+
+	  <label for="Provider">Provider:</label>
+  	  <input type="text" id="Provider" name="Provider" value="PRV51001"><br>
+
+	  <label for="InscClaimAmtReimbursed">InscClaimAmtReimbursed:</label>
+  	  <input type="text" id="InscClaimAmtReimbursed" name="InscClaimAmtReimbursed" value="2600"><br>
+
+	  <label for="AttendingPhysician">AttendingPhysician:</label>
+  	  <input type="text" id="AttendingPhysician" name="AttendingPhysician" value="PHY390922"><br>
+
+	  <label for="OperatingPhysician">OperatingPhysician:</label>
+  	  <input type="text" id="OperatingPhysician" name="OperatingPhysician" value="PHY390922"><br>
+
+	  <label for="OtherPhysician">OtherPhysician:</label>
+  	  <input type="text" id="OtherPhysician" name="OtherPhysician" value="PHY390922"><br>
+
+	  <label for="AdmissionDt">AdmissionDt:</label>
+  	  <input type="text" id="AdmissionDt" name="AdmissionDt" value="2009-04-12"><br>
+
+	  <label for="ClmAdmitDiagnosisCode">ClmAdmitDiagnosisCode:</label>
+  	  <input type="number" id="ClmAdmitDiagnosisCode" name="ClmAdmitDiagnosisCode" value="452"><br>
+
+	  <label for="DeductibleAmtPaid">DeductibleAmtPaid:</label>
+  	  <input type="number" id="DeductibleAmtPaid" name="DeductibleAmtPaid" value="2000"><br>
+
+	  <label for="DischargeDt">DischargeDt:</label>
+  	  <input type="text" id="DischargeDt" name="DischargeDt" value="2009-04-18"><br>
+
+	  <label for="DiagnosisGroupCode">DiagnosisGroupCode:</label>
+  	  <input type="number" id="DiagnosisGroupCode" name="DiagnosisGroupCode" value="145"><br>
+
+	  <label for="ClmDiagnosisCode_1">ClmDiagnosisCode_1:</label>
+  	  <input type="number" id="ClmDiagnosisCode_1" name="ClmDiagnosisCode_1" value="14"><br>
+
+	  <label for="ClmDiagnosisCode_2">ClmDiagnosisCode_2:</label>
+  	  <input type="number" id="ClmDiagnosisCode_2" name="ClmDiagnosisCode_2" value="5896"><br>
+
+	  <label for="ClmDiagnosisCode_3">ClmDiagnosisCode_3:</label>
+  	  <input type="number" id="ClmDiagnosisCode_3" name="ClmDiagnosisCode_3" value="11"><br>
+
+	  <label for="ClmDiagnosisCode_4">ClmDiagnosisCode_4:</label>
+  	  <input type="number" id="ClmDiagnosisCode_4" name="ClmDiagnosisCode_4" value="NaN"><br>
+
+	  <label for="ClmDiagnosisCode_5">ClmDiagnosisCode_5:</label>
+  	  <input type="number" id="ClmDiagnosisCode_5" name="ClmDiagnosisCode_5" value="NaN"><br>
+
+	  <label for="ClmDiagnosisCode_6">ClmDiagnosisCode_6:</label>
+  	  <input type="number" id="ClmDiagnosisCode_6" name="ClmDiagnosisCode_6" value="NaN"><br>
+
+	  <label for="ClmDiagnosisCode_7">ClmDiagnosisCode_7:</label>
+  	  <input type="number" id="ClmDiagnosisCode_7" name="ClmDiagnosisCode_7" value="184"><br>
+
+	  <label for="ClmDiagnosisCode_8">ClmDiagnosisCode_8:</label>
+  	  <input type="number" id="ClmDiagnosisCode_8" name="ClmDiagnosisCode_8" value="548"><br>
+
+	  <label for="ClmDiagnosisCode_9">ClmDiagnosisCode_9:</label>
+  	  <input type="number" id="ClmDiagnosisCode_9" name="ClmDiagnosisCode_9" value="785"><br>
+
+	  <label for="ClmDiagnosisCode_10">ClmDiagnosisCode_10:</label>
+  	  <input type="number" id="ClmDiagnosisCode_10" name="ClmDiagnosisCode_10" value="25"><br>
+
+	  <label for="ClmProcedureCode_1">ClmProcedureCode_1:</label>
+  	  <input type="number" id="ClmProcedureCode_1" name="ClmProcedureCode_1" value="86"><br>
+
+	  <label for="ClmProcedureCode_2">ClmProcedureCode_2:</label>
+  	  <input type="number" id="ClmProcedureCode_2" name="ClmProcedureCode_2" value="1581"><br>
+
+	  <label for="ClmProcedureCode_3">ClmProcedureCode_3:</label>
+  	  <input type="number" id="ClmProcedureCode_3" name="ClmProcedureCode_3" value="NaN"><br>
+
+	  <label for="ClmProcedureCode_4">ClmProcedureCode_4:</label>
+  	  <input type="number" id="ClmProcedureCode_4" name="ClmProcedureCode_4" value="NaN"><br>
+
+	  <label for="ClmProcedureCode_5">ClmProcedureCode_5:</label>
+  	  <input type="number" id="ClmProcedureCode_5" name="ClmProcedureCode_5" value="14"><br>
+
+	  <label for="ClmProcedureCode_6">ClmProcedureCode_6:</label>
+  	  <input type="number" id="ClmProcedureCode_6" name="ClmProcedureCode_6" value="589"><br>
+
+        <button class="button",type="submit">Save Inpatient</button>
+
+    </form>
+
+<div align="center">
+            <table>
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables3 %}
+                    <h2>{{titles3[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+            </table>
+        </div>
+
+
+    <form method="POST" enctype="multipart/form-data" action="/outpatient">
+	  <p class="lead">Enter Outpatient details.</p>
+	  <label for="BeneID">BeneID:</label>
+  	  <input type="text" id="BeneID" name="BeneID" value="BENE11001"><br>
+
+	  <label for="ClaimID">ClaimID:</label>
+  	  <input type="text" id="ClaimID" name="ClaimID" value="CLM46614"><br>
+
+	  <label for="ClaimStartDt">ClaimStartDt:</label>
+  	  <input type="text" id="ClaimStartDt" name="ClaimStartDt" value="2009-04-12"><br>
+
+	  <label for="ClaimEndDt">ClaimEndDt:</label>
+  	  <input type="text" id="ClaimEndDt" name="ClaimEndDt" value="2009-04-18"><br>
+
+	  <label for="Provider">Provider:</label>
+  	  <input type="text" id="Provider" name="Provider" value="PRV51001"><br>
+
+	  <label for="InscClaimAmtReimbursed">InscClaimAmtReimbursed:</label>
+  	  <input type="number" id="InscClaimAmtReimbursed" name="InscClaimAmtReimbursed" value="2600"><br>
+
+	  <label for="AttendingPhysician">AttendingPhysician:</label>
+  	  <input type="text" id="AttendingPhysician" name="AttendingPhysician" value="PHY390922"><br>
+
+	  <label for="OperatingPhysician">OperatingPhysician:</label>
+  	  <input type="text" id="OperatingPhysician" name="OperatingPhysician" value="PHY390922"><br>
+
+	  <label for="OtherPhysician">OtherPhysician:</label>
+  	  <input type="text" id="OtherPhysician" name="OtherPhysician" value="PHY390922"><br>
+
+	  <label for="ClmDiagnosisCode_1">ClmDiagnosisCode_1:</label>
+  	  <input type="number" id="ClmDiagnosisCode_1" name="ClmDiagnosisCode_1" value="14"><br>
+
+	  <label for="ClmDiagnosisCode_2">ClmDiagnosisCode_2:</label>
+  	  <input type="number" id="ClmDiagnosisCode_2" name="ClmDiagnosisCode_2" value="5896"><br>
+
+	  <label for="ClmDiagnosisCode_3">ClmDiagnosisCode_3:</label>
+  	  <input type="number" id="ClmDiagnosisCode_3" name="ClmDiagnosisCode_3" value="11"><br>
+
+	  <label for="ClmDiagnosisCode_4">ClmDiagnosisCode_4:</label>
+  	  <input type="number" id="ClmDiagnosisCode_4" name="ClmDiagnosisCode_4" value="NaN"><br>
+
+	  <label for="ClmDiagnosisCode_5">ClmDiagnosisCode_5:</label>
+  	  <input type="number" id="ClmDiagnosisCode_5" name="ClmDiagnosisCode_5" value="NaN"><br>
+
+	  <label for="ClmDiagnosisCode_6">ClmDiagnosisCode_6:</label>
+  	  <input type="number" id="ClmDiagnosisCode_6" name="ClmDiagnosisCode_6" value="NaN"><br>
+
+	  <label for="ClmDiagnosisCode_7">ClmDiagnosisCode_7:</label>
+  	  <input type="number" id="ClmDiagnosisCode_7" name="ClmDiagnosisCode_7" value="184"><br>
+
+	  <label for="ClmDiagnosisCode_8">ClmDiagnosisCode_8:</label>
+  	  <input type="number" id="ClmDiagnosisCode_8" name="ClmDiagnosisCode_8" value="548"><br>
+
+	  <label for="ClmDiagnosisCode_9">ClmDiagnosisCode_9:</label>
+  	  <input type="number" id="ClmDiagnosisCode_9" name="ClmDiagnosisCode_9" value="785"><br>
+
+	  <label for="ClmDiagnosisCode_10">ClmDiagnosisCode_10:</label>
+  	  <input type="number" id="ClmDiagnosisCode_10" name="ClmDiagnosisCode_10" value="25"><br>
+
+	  <label for="ClmProcedureCode_1">ClmProcedureCode_1:</label>
+  	  <input type="number" id="ClmProcedureCode_1" name="ClmProcedureCode_1" value="86"><br>
+
+	  <label for="ClmProcedureCode_2">ClmProcedureCode_2:</label>
+  	  <input type="number" id="ClmProcedureCode_2" name="ClmProcedureCode_2" value="1581"><br>
+
+	  <label for="ClmProcedureCode_3">ClmProcedureCode_3:</label>
+  	  <input type="number" id="ClmProcedureCode_3" name="ClmProcedureCode_3" value="NaN"><br>
+
+	  <label for="ClmProcedureCode_4">ClmProcedureCode_4:</label>
+  	  <input type="number" id="ClmProcedureCode_4" name="ClmProcedureCode_4" value="NaN"><br>
+
+	  <label for="ClmProcedureCode_5">ClmProcedureCode_5:</label>
+  	  <input type="number" id="ClmProcedureCode_5" name="ClmProcedureCode_5" value="14"><br>
+
+	  <label for="ClmProcedureCode_6">ClmProcedureCode_6:</label>
+  	  <input type="number" id="ClmProcedureCode_6" name="ClmProcedureCode_6" value="589"><br>
+
+	  <label for="DeductibleAmtPaid">DeductibleAmtPaid:</label>
+  	  <input type="number" id="DeductibleAmtPaid" name="DeductibleAmtPaid" value="22"><br>
+
+	  <label for="ClmAdmitDiagnosisCode">ClmAdmitDiagnosisCode:</label>
+  	  <input type="number" id="ClmAdmitDiagnosisCode" name="ClmAdmitDiagnosisCode" value="47"><br>
+
+        <button class="button",type="submit">Save outpatient</button>
+
+    </form>
+<div align="center">
+            <table>
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables4 %}
+                    <h2>{{titles4[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+            </table>
+</div>
+
+<form method="POST" enctype="multipart/form-data" action="/detect">
+  	  <button class="button1",type="submit">Predict</button>
+</form>
+
+<div align="center">
+            <table>
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables %}
+                    <h2>{{titles[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+            </table>
+</div>
+   
+</body>
+</html>

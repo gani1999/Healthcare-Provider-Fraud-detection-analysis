@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+ /* The image used */
+  background-image: url("https://blog.shift4shop.com/hubfs/iStock-876883008.png");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.heading{
+color: red;
+text-align: center;
+font-family:verdana;
+font-size:300%;
+}
+p{
+color: white;
+text-align: center;
+font-family:verdana;
+font-size:100%;
+}
+button{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  margin:auto;
+  display:block;
+}
+</style>
+</head>
+<body>
+
+<h1 class="heading">Healthcare Provider Fraud Detection Analysis</h1>
+
+<p>Our Machine Learning model is used to predict the fraud detection of healthcare providers, and helps the health insurance companines to provide the previlage to the legitimate claims and avoid fraud claims. This model is trained on the type of data, which containes the provider data, beneficiary details, inpatient and outpatient details.</p>
+<p>we list the fields to be provided to help you with prediction.</p>
+<p>Provider Details- [Provider]</p>
+<p>Beneficiary Details- ['BeneID', 'DOB', 'DOD', 'Gender', 'Race', 'RenalDiseaseIndicator',
+       'State', 'County', 'NoOfMonths_PartACov', 'NoOfMonths_PartBCov',
+       'ChronicCond_Alzheimer', 'ChronicCond_Heartfailure',
+       'ChronicCond_KidneyDisease', 'ChronicCond_Cancer',
+       'ChronicCond_ObstrPulmonary', 'ChronicCond_Depression',
+       'ChronicCond_Diabetes', 'ChronicCond_IschemicHeart',
+       'ChronicCond_Osteoporasis', 'ChronicCond_rheumatoidarthritis',
+       'ChronicCond_stroke', 'IPAnnualReimbursementAmt',
+       'IPAnnualDeductibleAmt', 'OPAnnualReimbursementAmt',
+       'OPAnnualDeductibleAmt']</p>
+<p>Inpatient Details- ['BeneID', 'ClaimID', 'ClaimStartDt', 'ClaimEndDt', 'Provider',
+       'InscClaimAmtReimbursed', 'AttendingPhysician', 'OperatingPhysician',
+       'OtherPhysician', 'AdmissionDt', 'ClmAdmitDiagnosisCode',
+       'DeductibleAmtPaid', 'DischargeDt', 'DiagnosisGroupCode',
+       'ClmDiagnosisCode_1', 'ClmDiagnosisCode_2', 'ClmDiagnosisCode_3',
+       'ClmDiagnosisCode_4', 'ClmDiagnosisCode_5', 'ClmDiagnosisCode_6',
+       'ClmDiagnosisCode_7', 'ClmDiagnosisCode_8', 'ClmDiagnosisCode_9',
+       'ClmDiagnosisCode_10', 'ClmProcedureCode_1', 'ClmProcedureCode_2',
+       'ClmProcedureCode_3', 'ClmProcedureCode_4', 'ClmProcedureCode_5',
+       'ClmProcedureCode_6']</p>
+<p>Outpatient Details- ['BeneID', 'ClaimID', 'ClaimStartDt', 'ClaimEndDt', 'Provider',
+       'InscClaimAmtReimbursed', 'AttendingPhysician', 'OperatingPhysician',
+       'OtherPhysician', 'ClmDiagnosisCode_1', 'ClmDiagnosisCode_2',
+       'ClmDiagnosisCode_3', 'ClmDiagnosisCode_4', 'ClmDiagnosisCode_5',
+       'ClmDiagnosisCode_6', 'ClmDiagnosisCode_7', 'ClmDiagnosisCode_8',
+       'ClmDiagnosisCode_9', 'ClmDiagnosisCode_10', 'ClmProcedureCode_1',
+       'ClmProcedureCode_2', 'ClmProcedureCode_3', 'ClmProcedureCode_4',
+       'ClmProcedureCode_5', 'ClmProcedureCode_6', 'DeductibleAmtPaid',
+       'ClmAdmitDiagnosisCode']</p>
+
+<br>
+<p>Try predicting healthcare provider fraud detection with csv data files</p>
+<br>
+
+<div>
+<form method="POST" enctype="multipart/form-data" action="/forms">
+       <button class="button",type="submit">Enter Deatails</button>
+</form>
+</div>
+
+<div>
+<p>Try predicting healthcare provider fraud detection with details mentioned above</p>
+<br>
+<form method="POST" enctype="multipart/form-data" action="/forms2">
+       <button class="button",type="submit">Enter Deatails</button>
+</form> 
+</div>
+
+</body>
+
+</html>
